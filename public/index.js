@@ -28,8 +28,8 @@ if (topbarButt) {
 }
 
 //const serverIP = 'ipower-backend-production.up.railway.app';
-const serverIP = `http://${window.location.hostname}:3000`;
-//const serverIP = '';
+//const serverIP = `http://${window.location.hostname}:3000`;
+const serverIP = '';
 //const serverIP = 'https://pos.biggroups.org'
 
 
@@ -71,4 +71,5 @@ function checkPassword(href) {
 
 setInterval(async () => {
   await fetch(`${serverIP}/select1`);
+
 }, 30000);
