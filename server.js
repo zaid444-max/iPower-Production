@@ -28,7 +28,7 @@ app.use((req, res, next) => {
 // Serve static frontend files
 app.use(express.static("public")); // Serve frontend files
 
-
+/*
 const db = mysql.createPool({
     connectionLimit: 10,
     host: process.env.DB_HOST,
@@ -38,18 +38,18 @@ const db = mysql.createPool({
     database: process.env.DB_NAME,
     multipleStatements: true // ✅ add this
 });
+*/
 
-/*
 const db = mysql.createPool({
     connectionLimit: 10,
-    host: "turntable.proxy.rlwy.net",
-    port: 39457, 
+    host: "metro.proxy.rlwy.net",
+    port: 58832, 
     user: 'root',
-    password: "JYaNxDIJrISpgzgknrubTpyTIvTKJFRv",
+    password: "NgHwklQgogmgKkBPAeorolGKAonrfSHN",
     database: 'railway',
     multipleStatements: true // ✅ add this
 });
-*/
+
 
 // ✅ Whenever a new connection is made, set the timezone
 db.on("connection", (connection) => {
@@ -3849,4 +3849,5 @@ app.get('/get-item-name', (req, res) => {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server running on port ${PORT}`);
+
 });
