@@ -733,6 +733,7 @@ async function printInvoice(invoiceId, customer, delivery, loanList) {
       let totalBalance = 0;
       const filteredLoanList = loanList.filter(loan => loan.customer_id === customer.id);
       filteredLoanList.forEach(loan => totalBalance += Number(loan.amount));
+      console.log(filteredLoanList)
       const loanCheckbox = document.getElementById('loan-checkbox');
       const discountVal = (Number(discountSpan.innerText.replace(/,/g, '')) * 1000).toLocaleString();
 
@@ -1530,5 +1531,6 @@ const lineStateDiv = document.querySelector('.lineState-div');
 lineStateDiv.innerHTML = (serverIP === 'https://pos.biggroups.org' || serverIP === '') ? 'Online' : 'Offline';
 if (lineStateDiv.innerHTML === 'Offline') lineStateDiv.style.color = 'orange';
 else {lineStateDiv.style.color = 'rgb(22, 156, 82)'}
+
 
 getComName();
