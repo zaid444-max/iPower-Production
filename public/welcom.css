@@ -1,0 +1,181 @@
+@font-face {
+  font-family: 'kurd';
+  src: url('ipower/kurd.ttf') format('truetype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0f0f1a;
+  font-family: 'kurd', sans-serif;
+  color: #eee;
+}
+
+.app {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 36px;
+  color: #6c63ff;
+  margin-bottom: 15px;
+}
+
+header input {
+  outline: none;
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  border: 1px solid #555;
+  border-radius: 10px;
+  background: #1a1a2e;
+  color: #fff;
+}
+
+ul#productList {
+  list-style: none;
+  margin-top: 20px;
+}
+
+li {
+  background: #1f1f2e;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  box-shadow: 0 0 8px rgba(108, 99, 255, 0.1);
+}
+
+li strong {
+  flex: 1;
+  font-size: 20px;
+}
+
+
+.name-div{
+  width: 100%;
+  margin: 1vh;
+
+
+
+
+}
+
+
+li input {
+  width: 80px;
+  padding: 8px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+}
+
+li button {
+  background: none;
+  color: #ff0000;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+li button :hover{
+  background: none;
+  color: #f00000a6;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+footer {
+  margin-top: 30px;
+  background: #1a1a2e;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+footer .totals p {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+
+
+
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.dinar{
+  color: #ffffff3d;
+  font-size: 18px;
+ 
+  margin: 0;
+}
+
+.pdf{
+  background: none;
+  color: #0fbe3b;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+
+}
+
+.pdf :hover{
+  background: none;
+  color: #0fbe3b62;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+
+}
+
+#bt-kry{
+  width: 100px;
+ 
+  background-color: transparent;
+  border: 0;
+  color: #0fbe3b;
+font-size: 35px;
+
+}
+
+#bt-kry :hover{
+  width: 100px;
+ 
+  background-color: transparent;
+  border: 0;
+  color: #10b33858;
+font-size: 35px;
+
+}
+
+
+.kry{
+ position: relative;
+ width: 100%;
+ max-width: 400px;
+ margin: 10px auto;
+
+}

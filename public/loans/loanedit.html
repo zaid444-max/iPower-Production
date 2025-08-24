@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="loan.css">
+  <title>Loan Edit</title>
+</head>
+<body>
+  <div class="most-upper-head-div">
+    <a href="../POS/pos.html"><i class="fas fa-shopping-cart home-text"></i></a>
+    <a href="../invoice/invoice.html"><i class="fas fa-folder home-text"></i></a>
+    <a href="../loans/loan.html"><i class="fas fa-hand-holding-usd home-text"></i></a>
+    <a href="../costumer/customer.html"><i class="fas fa-user home-text"></i></a>
+    <a href="../stock%20entry/stockentry.html"><i class="fas fa-truck home-text"></i></a>
+    <a href="../items/items.html"><i class="fas fa-cubes home-text"></i></a>
+    <a href="../groups/brand.html"><i class="fas fa-layer-group home-text"></i></a>
+    <a href="../index.html"><i class="fas fa-house-chimney home-text home-icon"></i></a>
+  </div>
+  <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 0.7vw;">
+    <div class="worker-names-div" style="display: flex; align-items: center;">
+    </div>
+  </div>
+  <div class="head-customer-div">
+    <i class="fas fa-arrow-left"></i>
+    <i class="fa-solid fa-handshake"></i>
+    <div class="customer-name-div"></div>
+    <div class="balance-div">Balance: <span class="balance-span"></span></div>
+    <div style="position: relative;" class="sear-inp-cont">
+      <input type="text" class="search-inp loanedit-search-inp" placeholder="Search invoice">
+      <i class="fas fa-times-circle loEdit-cir" style="color: aliceblue;"></i>
+    </div>
+    <!-- Broom Icon (for cleaning/clearing) -->
+    <i class="fas fa-file-invoice-dollar" onclick="lastBalancePDF()"></i>
+    <select class="langause-select">
+      <option value="Kurdish" selected>Kurdish</option>
+      <option value="Arabic">Arabic</option>
+      <option value="English">English</option>
+    </select>
+    <i class="fa-solid fa-broom"></i>
+    <input type="number" class="start-index-inp edit-file" placeholder="Start" spellcheck="false">
+    <input type="number" class="end-index-inp edit-file" placeholder="End" spellcheck="false">
+    <i class="fas fa-times RemoveIcon edit-remove-icon"></i>
+    <i class="far fa-file-pdf edit-file-pdf" onclick="endIndexInp.value.trim() !== '' ? createPDF() : createPDF(false)"></i>
+  </div>
+  <div class="edit-table-div">
+    <table>
+      <thead>
+        <th class="id-th">Id</th>
+        <th class="order-num-th">#</th>
+        <th class="edit-th">Created_At</th>
+        <th class="edit-th worker-th">Worker</th>
+        <th class="edit-th">Amount</th>
+        <th class="paid-th">Paid</th>
+        <th class="edit-th inv-num-th">Invoice_Number</th>
+        <th class="edit-th ballIcon-th"></th>
+        <th class="invoice-inf-th">Invoice Info</th>
+        <th class="edit-th">Note</th>
+        <th class="edit-th bin-th">Bin</th>
+      </thead>
+      <tbody class="table-tbody">
+      </tbody>
+    </table>
+  </div>
+  <div class="itemTabl-div">
+    <table class="itemTabl">
+      <thead class="itemTabl-head">
+        <th class="name-th">Name</th>
+        <th class="qnt-th">Qnt</th>
+        <th class="price-th">Price</th>
+      </thead>
+      <tbody class="itemTabl-body"></tbody>
+    </table>
+  </div>
+  <script src="../kurdishfont.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+  <script src="../index.js"></script>
+  <script src="loanedit.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="../general.js"></script>
+</body>
+</html>

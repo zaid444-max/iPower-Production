@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="invoice.css">
+  <title>Invoice</title>
+</head>
+<body>
+  <div class="most-upper-head-div">
+    <a href="../POS/pos.html"><i class="fas fa-shopping-cart home-text"></i></a>
+    <a href="invoice.html"><i class="fas fa-folder home-text"></i></a>
+    <a href="../loans/loan.html"><i class="fas fa-hand-holding-usd home-text"></i></a>
+    <a href="../costumer/customer.html"><i class="fas fa-user home-text"></i></a>
+    <a href="../stock%20entry/stockentry.html"><i class="fas fa-truck home-text"></i></a>
+    <a href="../items/items.html"><i class="fas fa-cubes home-text"></i></a>
+    <a href="../groups/brand.html"><i class="fas fa-layer-group home-text"></i></a>
+    <a href="../index.html"><i class="fas fa-house-chimney home-icon home-text"></i></a>
+  </div>
+  <div class="header">
+    <button class="topbarButt">Topbar</button>
+    <div class="search-div">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" class="search-inp" placeholder="Search" spellcheck="false">
+      <i class="fas fa-times-circle"></i>
+    </div>
+    <select class="price-select">
+      <option value="All" selected>All</option>
+      <option value="Price One">Price One</option>
+      <option value="Price Two">Price Two</option>
+      <option value="Price Three">Price Three</option>
+      <option value="Price Four">Price Four</option>
+      <option value="Price Five">Price Five</option>
+      <option value="Price Six">Price Six</option>
+      <option value="Price Seven">Price Seven</option>
+    </select>
+    <select class="delivery-select">
+      <option value="No Delivery">No Delivery</option>
+      <option value="Delivery">Delivery</option>
+      <option value="Both" selected>Both</option>
+    </select>
+    <div class="customer-inp-div">
+      <i class="fas fa-times fa-times-category customerRemoveIcon" style="display: none;"></i>
+        <input class="customer-inp" placeholder="Customer" spellcheck="false">
+      <div class="input-container-div" style="display: none;" spellcheck="false">
+        <div class="customDropdwon"></div>
+      </div>
+    </div>
+    <div class="delivery-inp-div">
+      <i class="fas fa-times fa-times-category deliveryRemoveIcon" style="display: none;"></i>
+        <input class="delivery-inp" placeholder="Delivery" spellcheck="false">
+      <div class="delivery-input-container-div" style="display: none;" spellcheck="false">
+        <div class="deliveryCustomDropdwon"></div>
+      </div>
+    </div>
+    <div class="worker-inp-div">
+      <i class="fas fa-times fa-times-category workerRemoveIcon" style="display: none;"></i>
+        <input class="worker-inp" placeholder="Seller" spellcheck="false">
+      <div class="worker-input-container-div" style="display: none;" spellcheck="false">
+        <div class="workerCustomDropdwon"></div>
+      </div>
+    </div>
+    <input type="number" class="page-inp">
+    <!-- Circle and Check Icons -->
+    <i class="fa-solid fa-circle-check filter-circle" title="Show"></i> <!-- Show -->
+    <div class="date-div">
+      <input type="date" id="startDate" spellcheck="false" style="user-select: none;">
+      <input type="date" id="endDate" spellcheck="false" style="user-select: none;">
+    </div>
+  </div>
+  <div class="table-div">
+    <table class="invoice-table">
+      <tr class="head-tr">
+        <th class="index-td">#</th>
+        <th class="id-th">Id</th>
+        <th class="customer-th">Customer</th>
+        <th style="display: none;">Total</th>
+        <th style="display: none;">Discount</th>
+        <th class="qnt-th">Qnt</th>
+        <th>Net Total</th>
+        <th style="display: none;">Total Buy</th>
+        <th class="statusText-th">StatusText</th>
+        <th class="computer-th">Computer</th>
+        <th class="seller-th">Seller</th>
+        <th>Date-Time</th>
+        <th class="delevery-th">Delivery</th>
+        <th class="order-th">Order</th>
+        <th class="status-th">Status</th>
+        <th class="deleter-th">Delete</th>
+        <th class="item-list-th">Items</th>
+      </tr>
+      <tbody class="table-body">
+      </tbody>
+    </table>
+  </div>
+
+  <div class="total-buy-container-div">
+    <div class="total-buy-div">
+      Total: <span class="total-span">0</span>
+      Total discount: <span class="total-discount-span">0</span>
+      Net Total: <span class="net-total-span">0</span>
+      Quantity: <span class="quantity-span">0</span>
+      <span class="total-profit-span" style="display: none;">0</span>
+      Total Delivery: <span class="total-delivery">0</span>
+    </div>
+  </div>
+  <div class="itemTabl-div">
+    <table class="itemTabl">
+      <thead class="itemTabl-head">
+        <th class="name-th">Name</th>
+        <th class="qnt-th">Qnt</th>
+        <th class="price-th">Price</th>
+      </thead>
+      <tbody class="itemTabl-body"></tbody>
+    </table>
+  </div>
+  <script src="../index.js"></script>
+  <script src="invoice2.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="../general.js"></script>
+</body>
+</html>

@@ -1,0 +1,715 @@
+body {
+ overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse; /* Remove space between cells */
+
+}
+
+th, td {
+  border: none;
+  text-align: center;
+  font-size: 1.9vh;
+  height: 30px;
+}
+
+th {
+  border: none;
+}
+
+span {
+  display: block;
+}
+
+div {
+  display: inline-block;
+}
+
+.newTab-link {
+  color: white;
+  background-color: hsl(195, 8%, 9%);
+  position: absolute;
+  cursor: pointer;
+  height: 2.3vw;
+  padding-left: 1.3vw;
+  padding-right: 1.3vw;
+  border-radius: 2vw;
+  font-size: 1.8vw;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.1s ease;
+}
+
+.newTab-link:hover {
+  background-color: #2f3940;
+}
+
+.newTab-link:active {
+  background-color: #000000;
+}
+
+.lineState-div {
+  position: absolute;
+  font-size: 1.1vw;
+  top: 3.6vh;
+  left: 7vw;
+}
+
+.worker-names-div {
+  display: flex;
+  gap: 1.6vw;
+  margin-left: 1vw;
+  font-size: 1vw;
+  color: rgb(142, 238, 238);
+  width: 35vw;
+}
+
+.worker-names-div span {
+  cursor: pointer;
+  padding-right: 1vw;
+  padding-left: 1vw;
+  padding-top: 0.7vw;
+  padding-bottom: 0.7vw;
+  transition: all 0.9s ease;
+  border-radius: 0.2vw;
+}
+
+.head-tr {
+  z-index: 20000;
+  background-color: rgb(0, 0, 0);
+  height: 5vh;
+}
+
+.target-inv-th, .target-inv-td {
+  display: none;
+}
+
+.checkbox-head-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 0.7vw;
+  gap: 1vw;
+}
+
+#loan-checkbox, #invoice-checkbox {
+  width: 1.2vw;
+  height: 1.2vw;
+  cursor: pointer;
+  accent-color: rgb(40, 134, 60); /* Modern CSS property */
+}
+
+#invoice-checkbox {
+  accent-color: rgb(40, 147, 171); /* Modern CSS property */
+}
+
+#loan-checkbox:checked ~ label[for="loan-checkbox"] {
+  color: rgb(59, 203, 91);
+}
+
+#invoice-checkbox:checked ~ label[for="invoice-checkbox"] {
+  color: rgb(40, 147, 171);
+}
+
+label[for="invoice-checkbox"], label[for="loan-checkbox"] {
+  margin-right: 1vw;
+  cursor: pointer;
+  font-size: 1vw;
+}
+
+label[for="loan-checkbox"]:hover {
+  color: rgb(40, 171, 44);
+}
+
+label[for="invoice-checkbox"]:hover {
+  color: rgb(40, 147, 171);
+}
+
+.discriptionModels, .invoiceEdit-discriptionModels {
+  height: 4vh;
+  width: 70.9vw;
+  border-radius: 0.2vw;
+  z-index: 5000;
+  color: white;
+  border: none;
+  outline: none;
+  background-color: rgb(15, 15, 15);
+  padding-left: 0.9;
+  font-size: 0.85vw;
+}
+
+.invoiceEdit-discriptionModels {
+  width: 72.7vw;
+}
+
+
+.fa-print {
+  margin-left: 20px;
+  cursor: pointer;
+  font-size: 2.5vh;
+  transition: 0.05s ease;
+}
+
+.fa-print:hover {
+  color: rgb(40, 147, 171);
+}
+
+.fa-print:active {
+  color: rgb(13, 64, 75);
+}
+
+.langause-select {
+  background-color: black;
+  color: white;
+  height: 110%;
+  width: 5vw;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 0.85vw;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.fliter-head-div {
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 5vh;
+}
+
+.search-item-inp, .note-inp, .invoice-table-search-inp {
+  background-color: black;
+  color: white;
+  width: 15vw;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 1.1vw;
+  border-bottom: 2px solid white;
+  padding-left: 17px;
+  box-sizing: border-box;
+}
+
+.search-item-inp:focus, .note-inp:focus, .invoice-table-search-inp:focus {
+  box-shadow: 0 1.9px 0 white;
+}
+
+.fa-times-circle {
+  font-size: 1.3vw;
+  position: absolute;
+  left: 13.3vw;
+  top: 1.2vh;
+  cursor: pointer;
+  color: rgb(99, 183, 225);
+  display: none;
+}
+
+.note-inp, .invoice-table-search-inp {
+  width: 10vw;
+  margin-left: 0.3vw;
+  font-size: 1vw;
+}
+
+.invoice-table-search-inp {
+  width: 9vw;
+}
+
+.fa-times-circle:hover {
+  color: rgb(213, 226, 232);
+}
+
+.existing-item-span {
+  position: absolute;
+  left: 33.5vw;
+  font-size: 1vw;
+  color: rgb(48, 192, 151);
+}
+
+.price-select {
+  background-color: black;
+  color: white;
+  height: 110%;
+  margin-left: 0.7vw;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 0.85vw;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.price-select:hover {
+  color: rgb(24, 171, 188);
+}
+
+select option {
+  font-size: 0.8vw;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.page-inp {
+  width: 2.3vw;
+  margin-left: 2vw;
+  background-color: transparent;
+  border: 2px solid rgb(214, 221, 229);
+  color: white;
+  outline: none;
+  border-radius: 3px;
+}
+
+.categoryRemoveIcon, .customerRemoveIcon, .deliveryRemoveIcon {
+  position: absolute;
+  color: rgb(209, 207, 207);
+  right: 17.7vw;
+  top: 1.1vh;
+  cursor: pointer;
+  font-size: 1.3vw;
+  background-color: rgb(0, 0, 0);
+}
+
+.categoryRemoveIcon {
+  right: 40.6vw;
+}
+
+.deliveryRemoveIcon {
+  right: 2vw;
+}
+
+.customerRemoveIcon:hover, .categoryRemoveIcon:hover, .deliveryRemoveIcon:hover {
+  background-color: rgb(30, 30, 30);
+  color: white;
+}
+
+.category-inp, .customer-inp, .delivery-inp {
+  background-color: black;
+  color: white;
+  border-radius: 3px;
+  padding-left: 15px;
+  width: 13vw;
+  height: 100%;
+  border: 'none';
+  outline: none;
+  margin-left: 0.3vw;
+  font-size: 1vw;
+  transition: 0.05s ease;
+  border: 1.6px solid rgb(255, 255, 255);
+  box-sizing: border-box;
+}
+
+.category-inp {
+  margin-left: 1vw;
+}
+
+.customer-inp {
+  width: 22.6vw;
+  color: rgb(33, 203, 203);
+}
+
+.delivery-inp {
+  width: 15.5vw;
+}
+
+.customer-inp:hover, .category-inp:hover,.delivery-inp:hover {
+  border: 1.6px solid rgb(38, 104, 122);
+}
+
+.category-input-container-div, .input-container-div, .delivery-input-container-div {
+  position: absolute;
+  top: 5.2vh;
+  right: 19vw;
+  z-index: 1000;
+}
+
+.category-input-container-div {
+  left: 46.5vw;
+}
+
+.delivery-input-container-div {
+  right: 2.1vw;
+}
+
+.customDropdwon, .category-customDropdwon, .delivery-customDropdwon {
+  background-color: rgb(25, 25, 25);
+  color: white;
+  width: 12.5vw;
+  border-radius: 4px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  height: 35vh;
+  scrollbar-width: none;
+}
+
+.customDropdwon {
+  width: 19vw;
+}
+
+.delivery-customDropdwon {
+  width: 14vw;
+}
+
+.customer-span, .category2-span {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+  font-size: 0.95vw;
+}
+
+.customer-span:hover, .category2-span:hover {
+  background-color: rgb(63, 63, 63);
+}
+
+.customer-span:active, .category2-span:active {
+  background-color: rgb(94, 94, 94);
+}
+
+.square-item-container-div {
+  width: 49vw;
+  height: calc(91vh - 115px);
+  overflow-y: auto;
+  cursor: pointer;
+  scrollbar-width: none;
+  user-select: none;
+}
+
+.square-item-div {
+  position: relative;
+  background-color: rgb(0, 187, 255);
+  margin: 2px;
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-top: 40px;
+  padding-bottom: 35px;
+  width: 6vw;
+  height: 13vh;
+  border-radius: 0.5vh;
+  overflow: hidden;
+  font-size: 1.8vh;
+  transition: filter 0.02s ease;
+}
+
+.square-item-div.active, .square-item-div.active {
+  filter: brightness(80%);
+}
+
+.quantity-span {
+  width: max-content;
+  padding-top: 3.5px;
+  padding-bottom: 3.5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 20px;
+  background-color: rgb(198, 203, 198);
+  color: rgb(0, 0, 0);
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  font-size: 1.7vh;
+  font-weight: 550;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-decoration-thickness: 1.5px; /* Increase thickness here */
+}
+
+.boxId-span {
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  border-radius: 2px;
+  font-size: 0.9vw;
+  background-color: rgb(202, 203, 203);
+  padding: 5px;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.price-one-span, .sku-span {
+  width: max-content;
+  padding-top: 3.5px;
+  padding-bottom: 3.5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 20px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(125, 42, 167);
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  font-size: 0.82vw;
+  font-weight: 550
+}
+
+.sku-span {
+  left: 4px;
+  font-size: 0.7vw;
+  background-color: transparent;
+  color: white;
+}
+
+.id-span {
+  /*display: none;*/
+  color: rgb(255, 255, 255);
+}
+
+.quality-span {
+  color: rgb(69, 69, 69);
+}
+
+.pos-invoice-table {
+  position: relative;
+}
+
+.invoice-table-container {
+  position: absolute;
+  overflow-y: scroll;
+  height: calc(85vh - 50px);
+  scrollbar-width: none;
+}
+
+tfoot {
+  position: sticky;
+  bottom: 0;
+  border-color: rgb(15, 127, 37);
+  background-color: rgb(0, 0, 0);
+}
+
+
+.table-thead {
+  position: sticky;
+  top: 0;
+  height: 30px;
+}
+
+th:nth-child(3), td:nth-child(3) { /* Name column*/
+  width: 52%;
+  text-align: left;
+}
+th:nth-child(4), td:nth-child(4) { /* Quantity column*/
+  width: 10%;
+}
+th:nth-child(5), td:nth-child(5) { /* Price column*/
+  width: 24%;
+}
+th:nth-child(7), td:nth-child(7) { /* Total column*/
+  width: 24%;
+}
+th:nth-child(8), td:nth-child(8) { /* Delete column*/
+  width: 2%;
+  padding-right: 10px;
+}
+
+td:nth-child(1), .item-id, .item-inf-span {
+  display: none;
+}
+
+.buy-price-span, .id-span, .box-id-td, .box-id-th {
+  display: none;
+  color: red;
+}
+
+.name-td:active .item-name-span{
+  color: black;
+  transition: 0.01s ease;
+}
+
+.quantity-inp, .price-inp {
+  width: 50px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  font-size: 1.8vh;
+  height: 2vh;
+  border-radius: 3px;
+  text-align: center;
+  outline: none;
+  border: none;
+  background-color: rgb(15, 15, 15);
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.newRow-tr td {
+  padding: 0.7vh 0 0.8vh 0;
+  cursor: pointer;
+}
+
+.newRow-tr:hover {
+  color: rgb(249, 212, 163);
+}
+
+.delete-row-icon {
+  color: brown;
+  font-size: 2vh;
+  transition: 0.04s ease;
+}
+
+.delete-row-icon:hover {
+  color: rgb(226, 170, 170);
+}
+
+.pay-button-tr td {
+  padding-left: 0;
+  padding-right: 0;
+  padding: 0;
+  padding-top: 10px;
+}
+
+.pay-button-td {
+  text-align: left;
+  padding-left: 0;
+  padding-right: 0;
+  padding: 0;
+  padding-top: 10px;
+  border: none;
+}
+
+.pay-butt, .discount-butt, .new-cancel-butt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 8vh;
+  font-size: 4.3vh;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  border-radius: 10px;
+  background-color: rgb(6, 154, 183);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.pay-butt:hover {
+  background-color: rgb(9, 75, 88);
+}
+
+.new-cancel-butt {
+  background-color: rgb(142, 33, 33);
+}
+
+.new-cancel-butt:hover {
+  background-color: rgb(66, 15, 15);
+}
+
+.discount-butt {
+  width: 90%;
+  background-color: rgb(17, 158, 64);
+  text-align: center;
+  padding-top: 15px;
+  margin-left: 0.5vw;
+}
+
+.discount-butt:hover {
+  background-color: rgb(8, 78, 31);
+}
+
+.total-span, .discount-span, .net-total-span, .total-profit-span, .total-quantity-span {
+  display: inline-block;
+}
+
+.discount-span {
+  color: rgb(201, 52, 52);
+}
+
+.net-total-span {
+  color: rgb(52, 201, 126);
+}
+
+.total-quantity-span {
+  color: rgb(52, 52, 169);
+}
+
+.modal-container-div {
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.modal-container-div.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-container-content-div {
+  background-color: rgb(12, 12, 12);
+  padding: 20px;
+  text-align: center;
+  width: 17vw;
+  height: 22vh;
+  border-radius: 8px;
+}
+
+.close-sign-span {
+  float: right;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.discount-inp {
+  width: 90%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  background-color: transparent;
+  color: rgb(126, 34, 34);
+}
+
+.discount-inp::placeholder {
+  font-size: 20px;
+}
+
+.apply-discount-butt {
+  width: 95%;
+  height: 25%;
+  margin-top: 5px;
+  background-color: rgb(208, 78, 78);
+  border: none;
+  border-radius: 9px;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.apply-discount-butt:hover {
+  background-color: rgb(109, 34, 34);
+}
+
+.spinner-container {
+  position: absolute;
+  left: 23vw;
+  top: 20vw;
+  height: 100%; /* Makes it fill the container vertically */
+}
+
+.spinner {
+  width: 8vw;
+  height: 8vw;
+  border: 14px solid #ccc;
+  border-top: 14px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+

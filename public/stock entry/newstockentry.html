@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Stock Entry</title>
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <link rel="stylesheet" href="newstockentry.css">
+</head>
+<body>
+  <div class="most-upper-head-div">
+    <a href="../POS/pos.html"><i class="fas fa-shopping-cart home-text"></i></a>
+    <a href="../invoice/invoice.html"><i class="fas fa-folder home-text"></i></a>
+    <a href="../loans/loan.html"><i class="fas fa-hand-holding-usd home-text"></i></a>
+    <a href="../costumer/customer.html"><i class="fas fa-user home-text"></i></a>
+    <a href="stockentry.html"><i class="fas fa-truck home-text"></i></a>
+    <a href="../items/items.html"><i class="fas fa-cubes home-text"></i></a>
+    <a href="../groups/brand.html"><i class="fas fa-layer-group home-text"></i></a>
+    <a href="../index.html"><i class="fas fa-house-chimney home-icon home-text"></i></a>
+  </div>
+  
+  <div class="head-div0">
+    <i class="fas fa-arrow-left"></i>
+    <input type="text" class="sku-inp" placeholder="SKU" spellcheck="false">
+    <input type="text" class="remark-inp" placeholder="Remark" spellcheck="false">
+    <i class="fas fa-calculator"></i>
+    <button class="save-butt">Save</button>
+  </div>
+  <div class="second-head-div">
+    <i class="fas fa-circle"></i><span class="invoice-status-span">Pending</span>
+    <input type="file" class="excel-file-inp" accept=".xlsx, .xls" spellcheck="false"><i class="fas fa-file-excel"></i>
+    <div class="find-item-div">
+      <input class="search-inp" placeholder="Find item" spellcheck="false">
+      <p class="existing-item-par">0</p>
+    </div>
+    <div class="checkbox-div">
+      <label class="change-price-label"><input type="checkbox" class="checkbox-inp" spellcheck="false">Change Price</label>
+      <i class="fa-solid fa-eye-slash eye-icon"></i>
+    </div>
+  </div>
+  <div class="head-div">
+    <p class="index-par">#</p>
+    <div class="select-item-div">
+      <p class="select-item-par">Select Item</p>
+      <i class="fas fa-plus add-item-butt"></i>
+    </div>
+    <p class="buy-price-par">Buy Price</p>
+    <p class="quantity-par">Quantity</p>
+    <p class="delete-par">Delete</p>
+  </div>
+  <form class="stock-entry-form">
+    <div class="container-div">
+      <span class="index">1</span>
+      <div class="new-div">Select...</div>
+      <input type="password" value="0" class="buy-price-inp" step="any"
+      onkeydown="if (
+          !/^[0-9.]$/.test(event.key) &&
+          !(event.ctrlKey && ['v', 'z', 'a', 'x', 'c'].includes(event.key.toLowerCase())) &&
+          !['Backspace', 'Delete', 'Tab', 'Enter', 'ArrowRight', 'ArrowLeft'].includes(event.key)
+      ) event.preventDefault();
+      if (event.key === '.' && this.value.includes('.')) event.preventDefault();">
+      <div class="two-quantity-div">
+        <input type="number" value="0" class="quantity-inp" onkeydown="if (!/^[0-9]$/.test(event.key) && !['Backspace', 'Delete', 'Tab', 'Enter', 'ArrowRight', 'ArrowLeft'].includes(event.key)) event.preventDefault();" spellcheck="false">
+        <div class="last-quantity-div">0</div>
+      </div>
+      <i class="fas fa-trash delete-icon"></i>
+    </div>
+  </form>
+  <div class="amount-container-div">
+    Total IQD: <span class="total-iqd-span">0</span>
+    Quantity: <span class="total-quantity-span">0</span>
+  </div>
+
+  <div class="modal-container-div">
+    <div class="modal-container-content-div">
+      <input type="number" placeholder="Total kilos 251" spellcheck="false" class="kilo-inp" onkeydown="goNextInp(event)">
+      <input type="number" placeholder="Kilo price 8$" spellcheck="false" class="kilo-price-inp" onkeydown="goNextInp(event)">
+      <input type="number" placeholder="Today Doller 140250" spellcheck="false" class="doller-dinar-inp" onkeydown="goNextInp(event)">
+      <input type="number" placeholder="Today RMB 7.14" spellcheck="false" class="RMB-inp" onkeydown="goNextInp(event)">
+    </div>
+  </div>
+
+  <script src="../index.js"></script>
+  <script src="https://cdn.sheetjs.com/xlsx-0.19.3/package/dist/xlsx.full.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="newstockentry2.js" type="module"></script>
+  <script src="../general.js"></script>
+</body>
+</html>

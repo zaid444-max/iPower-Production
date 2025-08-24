@@ -1,0 +1,587 @@
+table {
+  width: 100%;
+  border-collapse: collapse; /* Remove space between cells */
+  table-layout: fixed;
+}
+
+th, td {
+  border: none;
+  padding: 8px;
+  text-align: center;
+  font-size: 19px;
+  max-width: 170px;
+  overflow-wrap: break-word;
+  line-height: 0.9;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: 40px;
+}
+
+th {
+  background-color: #0f7e72; /* Light gray background for headers */
+  color: white;
+  font-weight: bold;
+}
+
+h1, .edit-h1 {
+  text-align: center;
+  font-size: 25px;
+  color: #00ccb4;
+}
+
+h1 {
+  margin-bottom: 0;
+  margin-top: 0;
+  position: absolute;
+  margin-left: 45%;
+}
+
+.worker-names-div {
+  display: flex;
+  gap: 1.6vw;
+  margin-left: 1vw;
+  font-size: 1vw;
+  color: rgb(142, 238, 238);
+  width: 35vw;
+}
+
+.worker-names-div span {
+  cursor: pointer;
+  padding-right: 1vw;
+  padding-left: 1vw;
+  padding-top: 0.7vw;
+  padding-bottom: 0.7vw;
+  transition: all 0.9s ease;
+  border-radius: 0.2vw;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-div {
+  display: flex;
+  position: relative;
+  margin-right: 34vw;
+}
+
+.search-inp {
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #1ab09e;
+  padding-left: 52px;
+  padding-bottom: 5px;
+  padding-top: 4px;
+  width: 500px;
+  font-size: 1vw;
+  background-color: transparent;
+  color: white;
+}
+
+.search-inp:focus {
+  box-shadow: 0 1.5px 0 #1ab09e; /* Bottom-only shadow */
+}
+
+.search-inp::placeholder{
+  color: gray;
+  font-size: 18px;
+  font-size: 17px;
+}
+
+.loanedit-search-inp {
+  border-bottom: 2px solid rgb(151, 123, 37);
+  padding-left: 10px;
+  width: 170px;
+}
+
+.loanedit-search-inp:focus {
+  box-shadow: 0 1.5px 0 rgb(151, 123, 37); /* Bottom-only shadow */
+}
+
+.search-icon {
+  font-size: 18px;
+  color: gray;
+  position: absolute;
+  left: 25px;
+  top: 15%;
+  bottom: 10px;
+}
+
+.fa-times-circle, .loEdit-cir {
+  font-size: 20px;
+  position: absolute;
+  right: 8px;
+  top: 0.4vw;
+  cursor: pointer;
+  color: #0d9686;
+  display: none;
+}
+
+.fa-times-circle:hover {
+  color: #084740;
+}
+
+.loEdit-cir {
+  top: 5px;
+  font-size: 18px;
+}
+
+.fa-sort-amount-down {
+  margin-left: 4px;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px 5px 5px 5px;
+  transition: color 0.15s;
+}
+
+.fa-sort-amount-down:hover {
+  color: black;
+}
+.fa-sort-amount-down:active {
+  color: white;
+}
+
+.edit-h1 {
+  color: #d8be6f;
+}
+
+.fa-broom {
+  font-size: 1.3vw;
+  padding: 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.1s ease;
+}
+
+.fa-broom:hover {
+  color: #bbc950;
+}
+
+.fa-broom:active {
+  color: #717d19;
+}
+
+.filter-div {
+  display: flex;
+  align-items: center;
+}
+
+.start-index-inp, .end-index-inp {
+  width: 35%;
+  height: 4vh;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  margin-left: 5px;
+  padding-left: 0.5vw;
+  font-size: 0.8vw;
+  border: 2px solid #a4d6d0;
+  transition: border 0.09s ease-in-out;
+}
+
+.start-index-inp:hover, .end-index-inp:hover {
+  border: 2px solid #037b6d;
+}
+
+.edit-file:hover {
+  border: 2px solid #7b7903;
+  transition: border 0.12s ease-in-out;
+}
+
+.RemoveIcon {
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px;
+  padding-right: 12px;
+  padding-left: 12px;
+  border-radius: 25px;
+  margin-left: 0.7vw;
+  transition: 0.12s ease;
+}
+
+.RemoveIcon:hover{
+  background-color: #456460;
+  color: black;
+}
+
+.edit-remove-icon:hover {
+  background-color: #626445;
+  color: black;
+  transition: 0.12s ease;
+}
+
+.RemoveIcon:active {
+  background-color: #0f6158;
+}
+
+.edit-remove-icon:active {
+  background-color: #40440a;
+  transition: 0.12s ease;
+}
+
+.fa-file-pdf {
+  font-size: 1.3vw;
+  margin-left: 0.4vw;
+  cursor: pointer;
+  padding: 13px 13px 13px 13px;
+  transition: color 0.1s ease-in-out;
+}
+
+.fa-file-pdf:hover {
+  color: #1f9d77;
+}
+
+.edit-file-pdf:hover {
+  color: #9d931f;
+  transition: color 0.1s ease-in-out;
+}
+
+.fa-file-pdf:active {
+  color: #053627;
+}
+
+.edit-file-pdf:active {
+  color: #4d470b;
+  transition: color 0.1s ease-in-out;
+}
+
+.fa-file-invoice-dollar {
+  font-size: 1.4vw;
+  margin-left: 5vw;
+  margin-right: 20px;
+  cursor: pointer;
+  transition: color 0.1s ease;
+}
+
+.fa-file-invoice-dollar:hover {
+  color: rgb(205, 200, 50);
+}
+
+.fa-file-invoice-dollar:active {
+  color: rgb(81, 79, 8);
+}
+
+.langause-select {
+  background-color: black;
+  color: white;
+  height: 110%;
+  width: 5vw;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 0.85vw;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  margin-right: 2vw;
+}
+
+.table-div, .edit-table-div {
+  position: relative;
+  height: calc(92vh - 45px);
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.edit-table-div {
+  height: calc(89vh - 45px);
+}
+
+thead {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.worker-th {
+  width: 7vw;
+}
+
+.worker-select {
+  background-color: black;
+  color: rgb(151, 189, 185);
+  border-radius: 3px;
+  height: 110%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding-right: 5px;
+}
+
+.worker-select:hover {
+  border-bottom: 3px solid rgb(70, 70, 71);
+}
+
+.edit-th, .id-th, .order-num-th, .paid-th {
+  background-color: rgb(151, 123, 37);
+}
+
+.paid-th, .checkBox-td {
+  width: 3vw;
+}
+
+.index-td, .index-th {
+  width: 3vw;
+}
+
+.balance-td {
+  color: #05897a;
+}
+
+.id-td, .id-th {
+  display: none;
+}
+
+.order-num-th {
+  width: 40px;
+}
+
+.new-row:hover {
+  color: #b5b5b5;
+  cursor: pointer;
+}
+
+.invoice-inf-td, .invoice-inf-th { display: none; }
+
+.edit-new-row:hover .date-time-td, .edit-new-row:hover .amount-td {
+  color: #8b8b8b;
+}
+
+.date-time-td {cursor: pointer;}
+
+.checkBox-td {
+  position: relative;
+}
+
+.checkBox-span {
+  font-size: 12px;
+  position: absolute;
+  bottom: 13px;
+}
+
+.paid-checkbox {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  accent-color: rgb(151, 123, 37);
+}
+
+.amount-td {
+  color: #19beab;
+}
+
+.invoice-num-td, .inv-num-th {
+  width: 150px;
+}
+
+td.amount-td:hover, td.invoice-num-td:hover, td.note-td:hover  {
+  cursor: pointer;
+}
+
+.ballIcon-td, .ballIcon-th {
+  width: 40px;
+}
+
+.ballIcon-td {
+  display: flex;
+  align-items: center;
+}
+
+.ballIcon {
+  font-size: 1.6vw;
+  position: absolute;
+  right: 26vw;
+  cursor: pointer;
+}
+
+.itemTabl {
+  all: unset;
+  border-collapse: collapse;
+  background-color: #1d1c1c;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  z-index: 1000;
+}
+
+.itemTabl-div {
+  height: 70vh;
+  left: 1.3vw;
+  top: 190px;
+  overflow-y: scroll;
+  position: absolute;
+  scrollbar-width: none;
+  background-color: #1d1c1c;
+  border-radius: 15px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.6s ease;
+}
+
+.itemTabl-div.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.itemTabl-head {
+  position: sticky;
+  top: 0;
+}
+
+.name-th, .qnt-th, .price-th {
+  width: 75%;
+}
+
+.qnt-th {
+  width: 10%;
+}
+
+.price-th {
+  width: 15%;
+}
+
+.itemTabl th,
+.itemTabl td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #1d1c1c;
+  text-align: left;
+}
+
+.itemTabl th {
+  background-color: #1d1c1c;
+  font-weight: bold;
+  color: rgb(83, 82, 82);
+}
+
+.itemTabl td {
+  color: rgb(233, 233, 233);
+  white-space: nowrap;
+}
+
+
+.bin-th, .bin-td {
+  width: 3vw;
+}
+
+.bin-td {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.head-customer-div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.fa-handshake {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 1.6vw;
+  cursor: pointer;
+  padding: 5px;
+  padding-right: 13px;
+  padding-left: 13px;
+  border-radius: 5px;
+}
+
+.fa-handshake:hover {
+  color: #dab748;
+}
+
+.fa-handshake:active {
+  color: #65500a;
+  transition: background-color 0.02 ease-out;
+}
+
+.customer-name-div, .balance-div {
+  color: rgb(191, 177, 49);
+  font-size: 1.5vw;
+  font-weight: bold;
+  width: 40%;
+}
+
+.balance-div {
+  color: #fafafa;
+}
+
+td input {
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  font-family: 'Triodion', serif;
+  text-align: center;
+}
+
+.new-inp {
+  height: 28px;
+  background-color: transparent;
+  color: white;
+}
+
+.fa-trash {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  color: #82860f;
+  border-radius: 3vw;
+  transition: color 0.07s ease;
+  font-size: 1.2vw;
+}
+
+.fa-trash:hover {
+  color: #333504;
+}
+
+.total-balance-div {
+  display: flex;
+  background-color: #0c0c0c;
+  height: 4.5%;
+  position: absolute;
+  bottom: 0.5%;
+  right: 0.3%;
+  left: 0.3%;
+  border-radius: 20px;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  font-size: 2vh
+}
+
+.total-balance-span {
+  margin-left: 10px;
+  color: #00ccb4;
+}
+
+.spinner-container {
+  position: absolute;
+  left: 43vw;
+  top: 36vh;
+  height: 100%; /* Makes it fill the container vertically */
+}
+
+.spinner {
+  width: 8vw;
+  height: 8vw;
+  border: 14px solid #ccc;
+  border-top: 14px solid rgb(15, 126, 114);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loanEdit-spinner {
+  border-top: 14px solid rgb(151, 123, 37);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

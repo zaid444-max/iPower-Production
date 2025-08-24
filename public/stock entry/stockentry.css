@@ -1,0 +1,171 @@
+table {
+  width: 100%;
+  border-collapse: collapse; /* Remove space between cells */
+  position: relative;
+  table-layout: fixed;
+}
+
+th, td {
+  padding: 8px;
+  text-align: center;
+  font-size: 1vw;
+}
+
+th {
+  background-color: #282828; /* Light gray background for headers */
+  border: none;
+  height: 30px;
+}
+
+.head-tr {
+  position: sticky;
+  top: -0.5px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.add-stock-entry {
+  background-color: transparent;
+  color: white;
+  border: none;
+  width: 10%;
+  font-size: 2vh;
+  color: #707070;
+  cursor: pointer;
+}
+
+.add-stock-entry:hover {
+  color: #d3d0d0;
+}
+
+.search-div {
+  display: flex;
+  position: relative;
+  width: 90%;
+}
+
+.search-inp {
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #a5a4a4;
+  padding-left: 52px;
+  padding-bottom: 5px;
+  padding-top: 4px;
+  width: 100%;
+  font-size: 20px;
+  background-color: transparent;
+  color: white;
+}
+
+.search-inp:focus {
+  box-shadow: 0 1.5px 0 #b7b7b7; /* Bottom-only shadow */
+}
+
+.search-inp::placeholder{
+  color: gray;
+  font-size: 18px;
+}
+
+.search-icon {
+  font-size: 18px;
+  color: gray;
+  position: absolute;
+  left: 25px;
+  top: 15%;
+  bottom: 10px;
+}
+
+.fa-times-circle {
+  font-size: 20px;
+  position: absolute;
+  right: 3px;
+  top: 4px;
+  display: none;
+  cursor: pointer;
+}
+
+.table-div {
+  height: calc(100vh - 115px);
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.invoice-status, .statusText-th {display: none;}
+
+.time-td {
+  font-size: 1vw;
+}
+
+.total-iqd-td {color: rgb(70, 146, 106);}
+
+.new-row {
+  cursor: pointer;
+}
+
+.new-row:hover {
+  color: #b9b9b9;
+}
+
+.delete-icon {
+  color: brown;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.delete-icon:hover {
+  background-color: #302f2d;
+}
+
+.total-container-div {
+  display: flex;
+  background-color: #0f1411;
+  height: 4.5%;
+  position: absolute;
+  bottom: 0.5%;
+  right: 0.3%;
+  left: 0.3%;
+  border-radius: 20px;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  font-size: 2vh
+}
+
+.total-baught-span {
+  margin-left: 7px;
+  margin-right: 100px;
+  color: rgb(63, 170, 113);
+}
+
+.total-on-way-span {
+  margin-left: 7px;
+  color: rgb(57, 110, 245);
+}
+
+
+.spinner-container {
+  position: absolute;
+  left: 43vw;
+  top: 36vh;
+  height: 100%; /* Makes it fill the container vertically */
+}
+
+.spinner {
+  width: 8vw;
+  height: 8vw;
+  border: 14px solid #ccc;
+  border-top: 14px solid rgb(40, 40, 40);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

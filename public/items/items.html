@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Items</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Triodion&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="items.css">
+</head>
+<body>
+  <div class="most-upper-head-div">
+    <a href="../POS/pos.html"><i class="fas fa-shopping-cart home-text"></i></a>
+    <a href="../invoice/invoice.html"><i class="fas fa-folder home-text"></i></a>
+    <a href="../loans/loan.html"><i class="fas fa-hand-holding-usd home-text"></i></a>
+    <a href="../costumer/customer.html"><i class="fas fa-user home-text"></i></a>
+    <a href="../stock entry/stockentry.html"><i class="fas fa-truck home-text"></i></a>
+    <a href="items.html"><i class="fas fa-cubes home-text"></i></a>
+    <a href="../groups/brand.html"><i class="fas fa-layer-group home-text"></i></a>
+    <a href="../index.html"><i class="fas fa-house-chimney home-icon home-text"></i></a>
+  </div>
+  <div class="header">
+    <button class="topbarButt">Topbar</button>
+    <input type="file" class="excel-file-inp" accept=".xlsx, .xls" spellcheck="false" style="display: none;">
+    <button class="add-item-butt"><i class="fas fa-plus add-item-icon"></i><span class="add-item-span">Add Item</span></button>
+    <div class="search-div">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" class="search-inp" placeholder="Enter item" spellcheck="false">
+      <i class="fas fa-times-circle"></i>
+    </div>
+    <!-- This is the {brand} dropdown container -->
+    <div class="select-brand-icon-div">
+      <div class="brand-div">Select brand..</div>
+      <i class="fa fa-caret-down"></i>
+        <div class="brand-input-container-div" style="display: none;">
+          <input class="brand-new-inp" spellcheck="false">
+        </div>
+    </div>
+    <!-- This is the {category} dropdown container -->
+    <div class="select-category-icon-div">
+      <div class="category-div">Select category..</div>
+      <i class="fa fa-caret-down fa-caret-down-category"></i>
+        <div class="category-input-container-div" style="display: none;">
+          <input class="category-new-inp" spellcheck="false">
+        </div>
+    </div>
+    <select id="priceSelect">
+      <option value="">Select a Price</option>
+      <option value="Price One">Price One</option>
+      <option value="Price Two">Price Two</option>
+      <option value="Price Three">Price Three</option>
+      <option value="Price Four">Price Four</option>
+      <option value="Price Five">Price Five</option>
+      <option value="Price Six">Price Six</option>
+      <option value="Price Sevin">Price Sevin</option>
+      <option value="All">All</option>
+    </select>
+    <i class="fas fa-eye-slash hidding-icon"></i>
+    <i class="fas fa-dollar-sign"></i>
+    <i class="fas fa-toggle-off disabling-icon"></i>
+    <div class="print-container-div" onclick="toggleSlash()">
+      <i class="fas fa-print"></i> <!-- Print -->
+      <i class="fas fa-slash"></i> <!-- Slash Icon -->
+    </div>
+    <select class="excel-select">
+      <option value="Customer" selected>Customer</option>
+      <option value="Order">Order</option>
+      <option value="Group">Group</option>
+      <option value="Jard">Jard</option>
+      <option value="All">All</option>
+    </select>
+    <i class="fas fa-file-excel" onclick="exportToExcel()"></i> <!-- Excel File Icon -->
+    <input type="number" class="page-inp">
+  </div>
+    <div class="table-div">
+      <table class="table">
+        <tr class="head-tr">
+          <th class="order-num">#</th>
+            <th class="disable-th">Disable</th>
+            <th class="noExcel-th">No Excel</th>
+            <th class="id-th">Item Id</th>
+            <th class="dis-or-th">Dis Or.</th>
+            <th class="changing-id-th">Changing Id</th>
+            <th class="sku-th">SKU</th>
+            <th class="box-id-th">Box Id</th>
+            <th>Brand</th>
+            <th class="model-th">Model</th>
+            <th class="category-th">Category</th>
+            <th>Quality</th>
+            <th class="quantity-th" onclick="orderByQnt(event)">Quantity</th>
+            <th class="buyPrice-th" onclick="orderByPrice(event)" db-column="buyPrice">Buy Price</th>
+            <th class="price-four-th" onclick="orderByPrice(event)" db-column="priceOne">Price Four</th>
+            <th class="price-one-th" onclick="orderByPrice(event)" db-column="priceOne0">Price One</th>
+            <th class="price-two-th" onclick="orderByPrice(event)" db-column="priceTwo">Price Two</th>
+            <th class="price-three-th" onclick="orderByPrice(event)" db-column="priceThree">Price Three</th>
+            <th class="price-five-th" onclick="orderByPrice(event)" db-column="priceFive">Price Five</th>
+            <th class="price-six-th" onclick="orderByPrice(event)" db-column="priceSix">Price Six</th>
+            <th class="price-sevin-th" onclick="orderByPrice(event)" db-column="priceSevin">Price Sevin</th>
+            <th class="edit-th">Discription</th>
+            <th class="delete-th">Delete</th>
+        </tr>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  <div class="total-buy-div">Buy amount:<span class="total-buy-span"></span></div>
+  <div class="modal-container-div hidden">
+    <div class="modal-container-content-div">
+      <span class="close-sign-span">&times;</span>
+      <h2>Discription</h2>
+      <textarea class="discount-textarea"></textarea>
+      <button class="apply-discount-butt">Apply</button>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <script src="../index.js"></script>
+  <script src="items2.js" type="module"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://cdn.sheetjs.com/xlsx-0.19.3/package/dist/xlsx.full.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="../general.js"></script>
+</body>
+</html>

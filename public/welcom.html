@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ku">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPOWER</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="welcom.css">
+</head>
+<body>
+  <div class="app">
+    
+    <header>
+      <div class="name-div">
+      <h1>IPOWER</h1>
+      <div class="kry">
+        <input type="text" placeholder="ناوی کریار" id="kryar"> 
+<button onclick="" id="bt-kry"><i class="fa-solid fa-check"></i></button></div>
+      </div>
+    
+      <input type="text" id="productInput" placeholder="ناوی کاڵا داخڵ بکە...">
+    </header>
+
+    <main>
+      <ul id="productList"></ul>
+    </main>
+
+    <footer>
+      
+      <div class="totals">
+        <button onclick="generateInvoice()" class="pdf">
+          <i class="fa-solid fa-print"></i>
+        </button>
+        <p>کۆی دانە: <span id="totalQty">0</span></p>
+        <p>کۆی گشتی: <span id="totalSum">0</span> دینار</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="welcom.js"></script>
+</body>
+</html>

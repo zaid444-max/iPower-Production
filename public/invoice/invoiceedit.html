@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="../POS/pos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <title>Invoice Edit</title>
+</head>
+<body>
+  <div class="most-upper-head-div">
+    <a href="../POS/pos.html"><i class="fas fa-shopping-cart home-text"></i></a>
+    <a href="invoice.html"><i class="fas fa-folder home-text"></i></a>
+    <a href="../loans/loan.html"><i class="fas fa-hand-holding-usd home-text"></i></a>
+    <a href="../costumer/customer.html"><i class="fas fa-user home-text"></i></a>
+    <a href="../stock%20entry/stockentry.html"><i class="fas fa-truck home-text"></i></a>
+    <a href="../items/items.html"><i class="fas fa-cubes home-text"></i></a>
+    <a href="../groups/brand.html"><i class="fas fa-layer-group home-text"></i></a>
+    <a href="../index.html"><i class="fas fa-house-chimney home-icon home-text"></i></a>
+  </div>
+  <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 0.7vw;">
+    <div class="worker-names-div" style="display: flex; align-items: center;"></div>
+    <div style="display: flex; width: 10vw; gap: 6vw; align-items: center;">
+      <a href="../POS/pos.html"><i class="fas fa-shopping-cart home-text"></i></a>
+      <a href="invoice.html"><i class="fas fa-folder home-text"></i></a>
+      <a href="../loans/loan.html"><i class="fas fa-hand-holding-usd home-text"></i></a>
+    </div>
+  </div>
+  <div class="checkbox-head-div">
+    <i class="fas fa-arrow-left"></i>
+    <i class="fas fa-print"></i>
+    <select class="langause-select">
+      <option value="Kurdish" selected>Kurdish</option>
+      <option value="Arabic">Arabic</option>
+      <option value="English">English</option>
+    </select>
+    <div class="checkbox-div">
+      <input id="invoice-checkbox" type="checkbox" spellcheck="false">
+      <label for="invoice-checkbox">Invoice</label>
+    </div>
+    <div class="checkbox-div">
+      <input id="loan-checkbox" type="checkbox" spellcheck="false">
+      <label for="loan-checkbox">Loan</label>
+    </div>
+    <select class="discriptionModels invoiceEdit-discriptionModels"></select>
+  </div>
+  <div class="fliter-head-div">
+    <input type="text" class="search-item-inp" placeholder="Search item" spellcheck="false">
+    <i class="fas fa-times-circle" style="display: none;"></i>
+    <input type="text" class="note-inp" placeholder="Note" spellcheck="false">
+    <input type="text" class="invoice-table-search-inp" placeholder="Search" spellcheck="false">
+    <span class="existing-item-span">0</span>
+    <select class="price-select">
+      <option value="Price One">Price One</option>
+      <option value="Price Two">Price Two</option>
+      <option value="Price Three">Price Three</option>
+      <option value="Price Four" selected>Price Four</option>
+      <option value="Price Five">Price Five</option>
+      <option value="Price Six">Price Six</option>
+      <option value="Price Seven">Price Seven</option>
+    </select>
+    <input type="number" class="page-inp">
+    <i class="fas fa-times fa-times-category categoryRemoveIcon" style="display: none;"></i>
+    <input class="category-inp" placeholder="Select category" spellcheck="false">
+    <div class="category-input-container-div" style="display: none;" spellcheck="false">
+      <div class="category-customDropdwon"></div>
+    </div>
+    <i class="fas fa-times fa-times-category customerRemoveIcon"></i>
+    <input class="customer-inp" placeholder="Fast Customer" spellcheck="false">
+    <div class="input-container-div" style="display: none;">
+      <div class="customDropdwon"></div>
+    </div>
+    <i class="fas fa-times fa-times-category deliveryRemoveIcon"></i>
+    <input class="delivery-inp" placeholder="No delivery" spellcheck="false">
+    <div class="delivery-input-container-div" style="display: none;">
+      <div class="delivery-customDropdwon"></div>
+    </div>
+  </div>
+  <div class="square-item-container-div">
+  </div>
+  <div class="invoice-table-container">
+    <table class="pos-invoice-table">
+      <thead class="table-thead">
+        <tr class="head-tr">
+        <th class="item-id">Item Id</th>
+        <th class="box-id-th">Box Id</th>
+        <th class="name-th">Name</th>
+        <th>Quantity</th>
+        <th class="price-one-th">Price</th>
+        <th class="target-inv-th">Target Inv</th>
+        <th>Total</th>
+        <th class="delete-th">Delete</th>
+      </tr>
+      </thead>
+
+        <tbody class="table-tbody">
+        </tbody>
+
+      <tfoot class="table-foot">
+      <tr class="pay-button-tr">
+        <td style="border: none;"></td>
+        <td class="pay-button-td"><button class="pay-butt">Pay</button></td>
+        <td style="border: none;" colspan="2" class="discount-butt-td"><button class="discount-butt">Discount</button></td>
+        <td style="border: none; text-align: left;" colspan="2" >
+          <div class="all-total-div">
+            Total: <span class="total-span">0</span> <br>
+            Discount: <span class="discount-span">0</span> <br>
+            Net Total: <span class="net-total-span">0</span> <br>
+            Total Quantity: <span class="total-quantity-span">0</span> <br>
+            <div><span class="total-profit-span">Z</span></div>
+
+          </div>
+        </td>
+        <td style="border: none;"></td>
+        <td style="border: none;"></td>
+      </tr>
+      </tfoot>
+
+    </table>
+  </div>
+
+  <div class="modal-container-div">
+    <div class="modal-container-content-div">
+      <span class="close-sign-span">&times;</span>
+      <h2>Enter Discount</h2>
+      <input type="number" placeholder="Enter amount" class="discount-inp" onkeydown="if (['-', 'ArrowUp', 'ArrowDown', 'e', 'E'].includes(event.key)) {event.preventDefault()};">
+      <button class="apply-discount-butt">Apply</button>
+    </div>
+  </div>
+  <script src="../general.js"></script>
+  <script src="../kurdishfont.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+  <script src="../index.js"></script>
+  <script src="invoiceedit2.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+</body>
+</html>
