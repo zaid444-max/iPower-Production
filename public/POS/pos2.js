@@ -610,7 +610,7 @@ payButt.addEventListener('click', async () => {
     if (invoiceCheckbox.checked) {
       await printInvoice(isEnoughRes.newInvNum, customer, delivery, loanList)
     }
-    location.reload(true); // Reload even if PDF fails
+    //location.reload(true); // Reload even if PDF fails
   } else {
     Toastify({
       text: `Please select an item to pay`,
@@ -1534,3 +1534,4 @@ else {lineStateDiv.style.color = 'rgb(22, 156, 82)'}
 
 
 getComName();
+
